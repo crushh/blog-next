@@ -34,7 +34,7 @@ categories: ['开发日记']
 
 如果把微信：for=“{{banner}}”，绑到 swiper 上
 那么渲染出来的就是一个又一个 swiper，很长，没有想象中的轮播图，
-正确做法是：将 wx：for=“{{banner}” 放在 swiper-item 上或者 block 上。
+正确做法是： 
 
 ```
  	<swiper class="banner-details"  indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
