@@ -1,4 +1,4 @@
-            - name: notion-blog-action
+- name: notion-blog-action-zoe
   # You may pin to the exact commit or the version.
   # uses: mohuishou/notion-blog-actions@dd7fcd722d01a02ec70b356fe8ecd3baa8840238
   uses: mohuishou/notion-blog-actions@v2.0.1
