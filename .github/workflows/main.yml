@@ -1,30 +1,37 @@
-- name: notion-blog-action-zoe
+on: [repository_dispatch, watch]
+name: notion
   # You may pin to the exact commit or the version.
   # uses: mohuishou/notion-blog-actions@dd7fcd722d01a02ec70b356fe8ecd3baa8840238
-  uses: mohuishou/notion-blog-actions@v2.0.1
-  with:
-    # notion app token，建议最好放到 Action Secret 中
-    token: ${{ secrets.NOTION_TOKEN }} 
-    # notion 中的数据库 id
-    database_id: 'e949ec1f41a04189ba05a084fbd5aaa6'
-    # notion database 状态字段的字段名，支持自定义
-    status_name: 'Status'
-    # notion database 文章已发布状态的字段值
-    status_published:'Published'
-    # notion database 文章待发布状态的字段值,触发 action 后会自动拉去所有该状态的文章，成功导出之后会把这篇文章的状态修改为上面设置的已发布状态
-    status_unpublish:'Awaiting'
-    # 是否迁移图片到 aliyun oss注意: 如果不迁移图片默认导出图片链接是 notion 的自带链接，有访问时效目前支持迁移图片到 aliyun oss 中
-    migrate_image: # optional, default is true
-    # 输出的文件夹路径
-    output:"./data/blog/notion/"
-    # aliyun access_key_id
-    access_key_id:${{ secrets.ALI_ID }} 
-    # aliyun access_key_secret
-    access_key_secret: ${{ secrets.ALI_SECRET }}
-    # aliyun bucket
-    bucket: 'zoe-blog'
-    # aliyun area: oss-cn-hangzhou
-    area:"oss-cn-hongkong"
-    # file dir, e.g. image/
-    prefix: # optional
+jobs:
+  notion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+        with:
+          submodules: false
+          
+      - uses: mohuishou/notion-blog-actions@v2.0.1
+        with:
+          # notion app token，建议最好放到 Action Secret 中
+          token: ${{ secrets.NOTION_TOKEN }} 
+          # notion 中的数据库 id
+          database_id: 'e949ec1f41a04189ba05a084fbd5aaa6'
+          # notion database 状态字段的字段名，支持自定义
+          status_name: 'Status'
+          # notion database 文章已发布状态的字段值
+          status_published: 'Published'
+          # notion database 文章待发布状态的字段值,触发 action 后会自动拉去所有该状态的文章，成功导出之后会把这篇文章的状态修改为上面设置的已发布状态
+          status_unpublish: 'Awaiting'
+          # 是否迁移图片到 aliyun oss注意: 如果不迁移图片默认导出图片链接是 notion 的自带链接，有访问时效目前支持迁移图片到 aliyun oss 中
+          migrate_image: true
+          # 输出的文件夹路径
+          output: "./data/blog/notion/"
+          # aliyun access_key_id
+          access_key_id: ${{ secrets.ALI_ID }} 
+          # aliyun access_key_secret
+          access_key_secret: ${{ secrets.ALI_SECRET }}
+          # aliyun bucket
+          bucket: 'zoe-blog'
+          # aliyun area: oss-cn-hangzhou
+          area: "oss-cn-hongkong"
           
