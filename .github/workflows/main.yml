@@ -17,7 +17,7 @@ jobs:
           # notion app token，建议最好放到 Action Secret 中
           token: ${{ secrets.NOTION_TOKEN }} 
           # notion 中的数据库 id
-          database_id: 'e949ec1f41a04189ba05a084fbd5aaa6'
+          database_id: 'b72eade64acc465b8e73711c8a90cb28'
           # notion database 状态字段的字段名，支持自定义
           status_name: 'Status'
           # notion database 文章已发布状态的字段值
