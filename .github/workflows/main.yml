@@ -15,7 +15,7 @@ jobs:
       - uses: mohuishou/notion-blog-actions@v2.0.1
         with:
           # notion app token，建议最好放到 Action Secret 中
-          token: ${{ secrets.NOTION_TOKEN }} 
+          notion_secret: ${{ secrets.NOTION_TOKEN }} 
           # notion 中的数据库 id
           database_id: 'b72eade64acc465b8e73711c8a90cb28'
           # notion database 状态字段的字段名，支持自定义
