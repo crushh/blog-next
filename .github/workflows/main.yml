@@ -43,7 +43,7 @@ jobs:
 
       - name: "cp md files"
         run: |
-          cp -f tmp/*.md data/blog/
+          cp -f ./tmp/*.md data/blog/
           rm -rf tmp
 
       - name: git setting
