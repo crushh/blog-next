@@ -36,10 +36,10 @@ jobs:
           # aliyun area: oss-cn-hangzhou
           area: "oss-cn-hongkong"
 
-      - name: "migrate image"
-        uses: crushh/crushh-blog-actions/migrate@v1
-        with:
-          input: "./tmp/*.md"  
+      # - name: "migrate image"
+      #   uses: crushh/crushh-blog-actions/migrate@v1
+      #   with:
+      #     input: "./tmp/*.md"  
 
       - name: "cp md files"
         run: |
