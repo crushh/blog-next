@@ -53,6 +53,6 @@ jobs:
 
       - name: update blog
         run: |
-          git add source
+          git add data/blog
           git commit -m "feat: auto update by notion sync"
           git push
