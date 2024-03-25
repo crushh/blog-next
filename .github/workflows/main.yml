@@ -27,7 +27,7 @@ jobs:
           # 是否迁移图片到 aliyun oss注意: 如果不迁移图片默认导出图片链接是 notion 的自带链接，有访问时效目前支持迁移图片到 aliyun oss 中
           migrate_image: true
           # 输出的文件夹路径
-          output: "./data/blog/notion/"
+          output: "./data/blog"
           # aliyun access_key_id
           access_key_id: ${{ secrets.ALI_ID }} 
           # aliyun access_key_secret
