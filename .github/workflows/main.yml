@@ -11,7 +11,7 @@ jobs:
         with:
           submodules: false
           
-      - uses: crushh/crushh-blog-actions@v1
+      - uses: crushh/crushh-blog-actions@master
         with:
           # notion app token，建议最好放到 Action Secret 中
           notion_secret: ${{ secrets.NOTION_TOKEN }} 
@@ -50,10 +50,6 @@ jobs:
         run: |
           git config --global user.email "2538990710@qq.com"
           git config --global user.name "crushh"
-          git config --global credential.helper store
-          git config --global credential.username "crushh"
-          echo "${{ secrets.GIT_TOKEN }}" > token.txt
-          git config --global credential.helper "store --file token.txt"
 
       - name: update blog
         run: |
