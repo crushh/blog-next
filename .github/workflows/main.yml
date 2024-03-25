@@ -37,7 +37,7 @@ jobs:
           area: "oss-cn-hongkong"
 
       - name: "migrate image"
-        uses: mohuishou/notion-blog-actions/migrate@main
+        uses: crushh/crushh-blog-actions/migrate@v1
         with:
           input: "./tmp/*.md"  
 
